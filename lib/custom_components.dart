@@ -23,7 +23,7 @@ class CustomComponents {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 40.0, horizontal: 35.0),
       child: RaisedButton(
-        child: Text('Qeydiyyatdan keç'),
+        child: Text(text),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.0)),
         padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0),

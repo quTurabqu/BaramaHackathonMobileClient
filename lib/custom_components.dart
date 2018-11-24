@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomComponents {
+
   static Widget textField(String hint, bool isPassword, bool isMail,
       TextEditingController theController) {
     return Padding(
@@ -46,6 +47,75 @@ class CustomComponents {
           Colors.blue[400],
           Colors.blue[400],
           Colors.blue[300],
+        ],
+      ),
+    );
+  }
+
+  static expensesCard() {
+
+    return Card(
+      color: Colors.amberAccent,
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  '12345\$',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                ),
+                Text('Kredit borcunuz'),
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.blue,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.all(15.0),
+                  child: Column(
+                    children: <Widget>[
+                      Center(
+                        child: Text(
+                          '45\$',
+                          style: TextStyle(fontSize: 20),
+                        ),
+//                      margin: EdgeInsets.fromLTRB(30.0, 10.0, 10.0, 0.0),
+                      ),
+                      Center(
+                        child: Text('Gündəlik büdcəniz'),
+//                      margin: EdgeInsets.fromLTRB(10.0, 10.0, 30.0, 10.0),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Container(
+                  padding: EdgeInsets.all(15.0),
+                  child: Column(
+                    children: <Widget>[
+                      Center(
+                        child: Text(
+                          '12\$',
+                          style: TextStyle(fontSize: 20),
+                        ),
+//                      margin: EdgeInsets.fromLTRB(10.0, 10.0, 30.0, 0.0),
+                      ),
+                      Center(
+                        child: Text('Gündəlik xərciniz'),
+//                      margin: EdgeInsets.fromLTRB(15.0, 10.0, 25.0, 10.0),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );

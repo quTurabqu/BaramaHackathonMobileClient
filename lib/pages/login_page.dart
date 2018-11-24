@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:fintech/custom_components.dart';
+import 'budget_page.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -11,7 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 
-class _LoginPageState extends State<StatefulWidget> {
+class _LoginPageState extends State<LoginPage> {
 
   final emailFieldController = TextEditingController();
   final passwordFieldController = TextEditingController();
@@ -37,7 +38,11 @@ class _LoginPageState extends State<StatefulWidget> {
             CustomComponents.textField('e-mail', false, true, emailFieldController),
             CustomComponents.textField('Password', true, false, passwordFieldController),
 
-            CustomComponents.button('Giriş et', () {}),
+            CustomComponents.button('Giriş et', () {
+              Navigator.push(context, MaterialPageRoute<BudgetPage>(
+                  builder: (context) => BudgetPage(),
+              ));
+            }),
           ],
         ),
       ),

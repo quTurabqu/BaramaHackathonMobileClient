@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:fintech/custom_components.dart';
 import 'package:fintech/builder_util_classes/Expense.dart';
 
-class ApplicationPage extends StatefulWidget {
+class BudgetPage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _ApplicationPageState();
+    return _BudgetPageState();
   }
 }
 
 
-class _ApplicationPageState extends State<ApplicationPage> {
+class _BudgetPageState extends State<BudgetPage> {
 
   List<Expense> _dailyExpenses = [
     Expense('Washed my car', 10),

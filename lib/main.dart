@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'pages/register_page.dart';
+import 'pages/landing_page.dart';
 
 
-void main() => runApp(LandingPage());
+void main() => runApp(HomePage());
 
 
 
-class LandingPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RegisterPage(),
+      home: LandingPage(),
     );
   }
 }

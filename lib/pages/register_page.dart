@@ -43,7 +43,11 @@ class _RegisterPageState extends State<RegisterPage>{
             CustomComponents.textField('e-mail', false, true, emailFieldController),
             CustomComponents.textField('Password', true, false, passwordFieldController),
 
-            CustomComponents.button('Qeydiyyatdan keç', () {}),
+            CustomComponents.button('Qeydiyyatdan keç', () {
+              setState(() {
+
+              });
+            }),
           ],
         ),
       ),

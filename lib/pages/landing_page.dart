@@ -17,7 +17,7 @@ class LandingPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(
+                    MaterialPageRoute<LoginPage>(
                       builder: (context) => LoginPage(),
                     ));
               },
@@ -27,7 +27,7 @@ class LandingPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(
+                    MaterialPageRoute<RegisterPage>(
                       builder: (context) => RegisterPage(),
                     ));
               },

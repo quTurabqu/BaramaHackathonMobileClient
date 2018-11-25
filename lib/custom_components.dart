@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class CustomComponents {
 
   static Widget textField(String hint, bool isPassword, bool isMail,
@@ -42,11 +43,11 @@ class CustomComponents {
         end: Alignment.topRight,
 //            stops: [0.0, 0.2, 0.3, 0.5, 0.7, 0.9],
         colors: <Color>[
-          Colors.blue[600],
-          Colors.blue[500],
-          Colors.blue[400],
-          Colors.blue[400],
-          Colors.blue[300],
+          Colors.yellow[300],
+          Colors.yellow[200],
+          Colors.yellow[200],
+          Colors.yellow[200],
+          Colors.yellow[200],
         ],
       ),
     );
@@ -85,11 +86,9 @@ class CustomComponents {
                           '45\$',
                           style: TextStyle(fontSize: 20),
                         ),
-//                      margin: EdgeInsets.fromLTRB(30.0, 10.0, 10.0, 0.0),
                       ),
                       Center(
                         child: Text('Gündəlik büdcəniz'),
-//                      margin: EdgeInsets.fromLTRB(10.0, 10.0, 30.0, 10.0),
                       ),
                     ],
                   ),
@@ -104,11 +103,9 @@ class CustomComponents {
                           '12\$',
                           style: TextStyle(fontSize: 20),
                         ),
-//                      margin: EdgeInsets.fromLTRB(10.0, 10.0, 30.0, 0.0),
                       ),
                       Center(
                         child: Text('Gündəlik xərciniz'),
-//                      margin: EdgeInsets.fromLTRB(15.0, 10.0, 25.0, 10.0),
                       ),
                     ],
                   ),
@@ -117,6 +114,19 @@ class CustomComponents {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  static Widget aTextField(String hint, TextInputType type, TextEditingController theController) {
+
+    return ListTile(
+      title: TextFormField(
+        keyboardType: type,
+        decoration: InputDecoration(
+          hintText: hint,
+        ),
+        controller: theController,
       ),
     );
   }

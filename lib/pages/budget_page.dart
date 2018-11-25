@@ -3,15 +3,26 @@ import 'package:flutter/material.dart';
 
 import 'package:fintech/custom_components.dart';
 import 'package:fintech/builder_util_classes/Expense.dart';
+import 'loan_application.dart';
+
+
+class StaticValues {
+  static String sessionKey;
+}
 
 class BudgetPage extends StatefulWidget {
 
+
+  BudgetPage(String sessionKey) {
+    StaticValues.sessionKey = sessionKey;
+  }
+
   @override
   State<StatefulWidget> createState() {
+
     return _BudgetPageState();
   }
 }
-
 
 class _BudgetPageState extends State<BudgetPage> {
 
@@ -34,11 +45,21 @@ class _BudgetPageState extends State<BudgetPage> {
 
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text('Maddi vəziyyətiniz'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.add),
+            icon: Image.asset('assets/loan.png'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<LoanApplicationPage>(
+                    builder: (context) => LoanApplicationPage(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Image.asset('assets/expense.png'),
             onPressed: () {},
           ),
         ],

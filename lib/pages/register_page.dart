@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 import 'package:fintech/custom_components.dart';
+import 'package:fintech/api_reguests/api_request.dart';
+import 'package:fintech/util_files/dynamic_to_string.dart';
+import 'email_verification_page.dart';
 
 
 class RegisterPage extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     return _RegisterPageState();
   }
 }
 
-class _RegisterPageState extends State<RegisterPage>{
+class _RegisterPageState extends State<RegisterPage> {
 
   final nameFieldController = TextEditingController();
   final surnameFieldController = TextEditingController();
@@ -20,7 +22,6 @@ class _RegisterPageState extends State<RegisterPage>{
 
   @override
   void dispose() {
-
     nameFieldController.dispose();
     surnameFieldController.dispose();
     emailFieldController.dispose();
@@ -39,13 +40,35 @@ class _RegisterPageState extends State<RegisterPage>{
           padding: EdgeInsets.symmetric(vertical: 32.0, horizontal: 15.0),
           children: <Widget>[
             CustomComponents.textField('Ad', false, false, nameFieldController),
-            CustomComponents.textField('Soyad', false, false, surnameFieldController),
-            CustomComponents.textField('e-mail', false, true, emailFieldController),
-            CustomComponents.textField('Password', true, false, passwordFieldController),
+            CustomComponents.textField(
+                'Soyad', false, false, surnameFieldController),
+            CustomComponents.textField(
+                'e-mail', false, true, emailFieldController),
+            CustomComponents.textField(
+                'Password', true, false, passwordFieldController),
 
             CustomComponents.button('Qeydiyyatdan keç', () {
-              setState(() {
+              Future future = ApiRequest.getRegistrationCode(
+                nameFieldController.text,
+                surnameFieldController.text,
+                emailFieldController.text,
+                passwordFieldController.text,
+              );
 
+              future.then((data) {
+                setState(() {
+
+                  String response = dynamicToString(data);
+                  print(response);
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<EmailVerification>(
+                        builder: (context) => EmailVerification(),
+                    ),
+                  );
+
+                });
               });
             }),
           ],

@@ -122,6 +122,7 @@ class CustomComponents {
 
     return ListTile(
       title: TextFormField(
+        textAlign: TextAlign.center,
         keyboardType: type,
         decoration: InputDecoration(
           hintText: hint,

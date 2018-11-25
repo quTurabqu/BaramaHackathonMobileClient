@@ -39,7 +39,7 @@ class _StateLoanApplicationPage extends State<LoanApplicationPage> {
         body: TabBarView(
           children: <Widget>[
             Center(
-              child: getSubmissionTab(),
+              child: SubmissionTab(),
             ),
             Center(
               child: getResponsesTab(),

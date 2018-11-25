@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 import 'package:fintech/custom_components.dart';
-import 'package:fintech/builder_util_classes/Expense.dart';
+import 'package:fintech/util_files/Expense.dart';
 import 'loan_application.dart';
 
 
@@ -11,6 +11,8 @@ class StaticValues {
 }
 
 class BudgetPage extends StatefulWidget {
+
+
 
 
   BudgetPage(String sessionKey) {
@@ -29,6 +31,7 @@ class _BudgetPageState extends State<BudgetPage> {
   List<Expense> _dailyExpenses = [
     Expense('Washed my car', 10),
     Expense('My wive\'s birthday', 50),
+    Expense('Brought new shirt', 40),
   ];
 
   @override
